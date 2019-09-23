@@ -1,6 +1,7 @@
 package com.example.vm.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by Harriet on 9/18/2019.
@@ -48,5 +49,13 @@ public class Product{
 
     public void setUnitPrice(BigDecimal unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id;
     }
 }

@@ -9,6 +9,6 @@ import javax.ejb.Local;
 public interface BeanInterface <T>{
     T add(T t);
     T edit(T t);
-    T findById(long id);
+    T read(T t);
     boolean delete(T t);
 }

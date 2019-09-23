@@ -2,6 +2,7 @@ package com.example.vm.bean;
 
 import com.example.vm.model.Denomination;
 
+import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import java.math.BigDecimal;
@@ -16,6 +17,8 @@ import java.util.Map;
 @Local
 @Stateless
 public class MoneyConverteBeanImpl implements MoneyConverterBeanI {
+    @EJB
+   private CashDrawerBeanI cashDrawerBeanI;
     @Override
     public BigDecimal getMoneyValueFromDenominations(Map<Denomination, Integer> money) {
         BigDecimal amount = BigDecimal.ZERO;
@@ -45,9 +48,18 @@ public class MoneyConverteBeanImpl implements MoneyConverterBeanI {
     private int getDenominationCount(Denomination denomination,BigDecimal amount) {
         int denominationCount;
         if (amount.compareTo(new BigDecimal(denomination.getValue())) >= 0){
-            denominationCount=Integer.parseInt(Math.floor(Double.parseDouble(amount.divide(new BigDecimal(Denomination.THOUSAND_NOTE.getValue()))+" "))+"");
-            return denominationCount;
+            double i=Double.parseDouble(amount.divide(new BigDecimal(denomination.getValue()))+" ");
+            i=Math.floor(i);
+            denominationCount=(int)i;
+            int availableCount=this.getAvailableCountForDenomination(denomination);
+
+            return availableCount>=denominationCount ? denominationCount:availableCount;
+            //return Math.min(availableCount,denominationCount);
         }
         return 0;
     }
+    private int getAvailableCountForDenomination(Denomination denomination){
+        return cashDrawerBeanI.findByDenomination(denomination).getCount();
+    }
+
 }
