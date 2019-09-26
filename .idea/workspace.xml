@@ -8,18 +8,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="209f5c8e-4dd3-4d97-bb2b-7f7f97e25815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VendingMachine_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VendingMachine_war.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/VendingMachine_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VendingMachine_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VendingMachine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VendingMachine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/RestAPI/MoneyConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/RestAPI/MoneyConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/BeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/BeanImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/BeanInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/BeanInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/CashDrawerBeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/CashDrawerBeanImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/MoneyConverteBeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/MoneyConverteBeanImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachineBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachineBeanImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/ProductBeanI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/ProductBeanI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/SaleBeanI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/SaleBeanI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/SaleBeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/SaleBeanImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/StockBeanI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/StockBeanI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/StockBeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/StockBeanImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachineBeanImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/bean/VendingMachineBeanImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vm/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vm/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/BeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/BeanImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/ProductBeanI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/ProductBeanI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/SaleBeanI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/SaleBeanI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/SaleBeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/SaleBeanImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/VendingMachineBeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/VendingMachine/WEB-INF/classes/com/example/vm/bean/VendingMachineBeanImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VendingMachine/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vm/bean/BeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vm/bean/BeanImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vm/bean/ProductBeanI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vm/bean/ProductBeanI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vm/bean/SaleBeanI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vm/bean/SaleBeanI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vm/bean/SaleBeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vm/bean/SaleBeanImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vm/bean/VendingMachineBeanImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vm/bean/VendingMachineBeanImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +75,21 @@
         <item name="vendingmachine@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="vendingmachine: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="cash_drawer_tbl: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="product_tbl: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="vendingmachine@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vendingmachine: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="sale_tbl: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="vendingmachine@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="vendingmachine: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="stock_tbl: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -111,9 +141,15 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Desktop\VendingMachine\src\main\webapp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -127,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JBoss Server.Wildfly17">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -260,6 +296,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.example.vm.javawebsocket in VendingMachine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="VendingMachine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.vm.javawebsocket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.vm.javawebsocket" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
       <option name="filePath" />
       <option name="vmParameters" />
@@ -321,6 +372,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.example.vm.javawebsocket in VendingMachine" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -329,12 +385,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@85d917d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@85d917d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@53a826ad" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6137aa1f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -355,7 +406,13 @@
       <workItem from="1568793199504" duration="37368000" />
       <workItem from="1568954081412" duration="660000" />
       <workItem from="1568960448752" duration="416000" />
-      <workItem from="1568960895528" duration="20932000" />
+      <workItem from="1568960895528" duration="27892000" />
+      <workItem from="1569308229873" duration="2082000" />
+      <workItem from="1569310483763" duration="1344000" />
+      <workItem from="1569317742041" duration="1114000" />
+      <workItem from="1569391469651" duration="6699000" />
+      <workItem from="1569469710321" duration="3622000" />
+      <workItem from="1569475327639" duration="29878000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,7 @@ import com.example.vm.model.Denomination;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,13 +19,13 @@ import java.sql.Statement;
 @Local
 public class CashDrawerBeanImpl extends BeanImpl<CashDrawer> implements CashDrawerBeanI {
     @Inject
-   private DBHandler dbHandler;
+   private Connection connection;
     @Override
     public CashDrawer findByDenomination(Denomination denomination) {
         String sql = "SELECT * FROM cash_drawer_tbl WHERE denomination='"+denomination+"'";
         CashDrawer cashDrawer = null;
         try {
-            Statement statement = dbHandler.getConnection().createStatement();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             if(rs.next()){
                 cashDrawer = new CashDrawer();

@@ -6,32 +6,19 @@ import java.util.Objects;
 /**
  * Created by Harriet on 9/18/2019.
  */
-//public enum Product {
-//    SODA(25.0),
-//    SWEET(5.0),
-//    BISCUIT(40.0),
-//    CHOCOLATE(170.0);
-//
-//
-//    private double unitPrice;
-//
-//    Product(double unitPrice) {
-//        this.unitPrice = unitPrice;
-//    }
-//}
 public class Product{
-    private long id;
+    private int id;
     private String name;
     private BigDecimal unitPrice;
 
     public Product() {
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

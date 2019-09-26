@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="vendingmachine@localhost" uuid="c428269d-a86d-46b1-9c25-b44001ed4019">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="vendingmachine@localhost" uuid="0c0b8696-746b-4962-b1fb-60f2865c73bb">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/vendingmachine</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
@@ -13,7 +13,6 @@
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
-        <property name="serverTimezone" value="UTC" />
       </driver-properties>
     </data-source>
   </component>

@@ -3,9 +3,7 @@ package com.example.vm.RestAPI;
 import com.example.vm.bean.MoneyConverterBeanI;
 import com.example.vm.model.Denomination;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.mysql.fabric.xmlrpc.base.Param;
-import jdk.nashorn.internal.runtime.JSONFunctions;
+
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;

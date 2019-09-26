@@ -1,6 +1,5 @@
 package com.example.vm.bean;
 
-import com.example.vm.db.DBHandler;
 import com.example.vm.model.CashDrawer;
 import com.example.vm.model.Product;
 import com.example.vm.model.Sale;
@@ -10,6 +9,7 @@ import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,7 +21,7 @@ import java.sql.Statement;
 @Stateless
 public class BeanImpl<T> implements BeanInterface<T> {
     @Inject
-    private DBHandler dbHandler;
+    private Connection connection;
     @EJB
     private ProductBeanI productBeanI;
 
@@ -52,7 +52,7 @@ public class BeanImpl<T> implements BeanInterface<T> {
 
         }
         try {
-            statement = dbHandler.getConnection().createStatement();
+            statement = connection.createStatement();
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +83,7 @@ public class BeanImpl<T> implements BeanInterface<T> {
 
         }
         try {
-            stmt = dbHandler.getConnection().createStatement();
+            stmt = connection.createStatement();
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +113,7 @@ public class BeanImpl<T> implements BeanInterface<T> {
             sql = "SELECT * FROM stock_tbl where id=" + stock.getId();
         }
         try {
-            Statement statement = dbHandler.getConnection().createStatement();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             if (rs.next()) {
                 return t;
@@ -146,7 +146,7 @@ public class BeanImpl<T> implements BeanInterface<T> {
 
         }
         try {
-            stmt = dbHandler.getConnection().createStatement();
+            stmt = connection.createStatement();
             return stmt.executeUpdate(sql) > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -154,25 +154,7 @@ public class BeanImpl<T> implements BeanInterface<T> {
         return false;
     }
     }
-//
-//    private T generateSqlByOperation(int operation, T t) {
-//        switch (operation) {
-//            case 1:
-//
-//
-//                break;
-//            case 2:
-//
-//                break;
-//            case 3:
-//
-//                break;
-//            case 4:
-//
-//                break;
-//        }
-//
-//    }
+
 
 
 

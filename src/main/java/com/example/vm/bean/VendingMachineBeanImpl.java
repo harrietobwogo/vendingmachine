@@ -24,6 +24,8 @@ import java.util.*;
 public class VendingMachineBeanImpl implements VendingMachineBean {
     @PostConstruct
     public void initialize() {
+
+
         List<Denomination> denominationList = Arrays.asList(Denomination.values());
         for (Denomination denomination : denominationList) {
             CashDrawer cashDrawer = cashDrawerBeanI.findByDenomination(denomination);
@@ -53,18 +55,6 @@ public class VendingMachineBeanImpl implements VendingMachineBean {
 
     @Override
     public boolean makeSale(Product product, int quantity, Map<Denomination, Integer> denominations) throws InsufficientAmountException, InsufficientProductQuantityException {
-        BigDecimal amount = moneyConverterBeanI.getMoneyValueFromDenominations(denominations);
-        //validate amount
-        if (amount.compareTo(this.calculateRequiredAmount(product, quantity)) < 0)
-            throw new InsufficientAmountException();
-
-        //validate product availabilty
-        if (stockBeanI.getStockBalance(product) < quantity) throw new InsufficientProductQuantityException();
-        //check if there's change to be given
-        boolean giveChange = false;
-        if (amount.compareTo(this.calculateRequiredAmount(product, quantity)) > 0)
-            giveChange = true;
-
         // Add denominations to VM's Cash Drawer
         for (Map.Entry m : denominations.entrySet()) {
             Denomination denomination = Denomination.valueOf(m.getKey().toString());
@@ -72,6 +62,23 @@ public class VendingMachineBeanImpl implements VendingMachineBean {
             cashDrawer.setCount(cashDrawer.getCount() + Integer.parseInt(m.getValue() + ""));
             cashDrawerBeanI.edit(cashDrawer);
         }
+        BigDecimal userAmount = moneyConverterBeanI.getMoneyValueFromDenominations(denominations);
+        BigDecimal requiredAmount = this.calculateRequiredAmount(product, quantity);
+        BigDecimal userBalance = userAmount.subtract(requiredAmount);
+
+        //validate userAmount
+        if (userAmount.compareTo(this.calculateRequiredAmount(product, quantity)) < 0) {
+            refundCustomerMoney(denominations);
+            throw new InsufficientAmountException();
+        }
+        //validate product availabilty
+        if (stockBeanI.getStockBalance(product) < quantity) throw new InsufficientProductQuantityException();
+        //check if there's change to be given
+        boolean giveChange = false;
+        if (userAmount.compareTo(this.calculateRequiredAmount(product, quantity)) > 0)
+            giveChange = true;
+
+
         Sale sale = new Sale();
         sale.setDate(new Date());
         sale.setAmount(this.calculateRequiredAmount(product, quantity));
@@ -79,7 +86,7 @@ public class VendingMachineBeanImpl implements VendingMachineBean {
         sale.setQuantity(quantity);
         boolean status = saleBeanI.makeSale(sale);
         if (giveChange)
-            status = status && (giveChange && !this.giveChange(amount.subtract(this.calculateRequiredAmount(product, quantity))).isEmpty());
+            status = status && (giveChange && !this.giveChange(userAmount.subtract(this.calculateRequiredAmount(product, quantity))).isEmpty());
         if (!status)
             this.refundCustomerMoney(denominations);
         return status;
@@ -89,13 +96,20 @@ public class VendingMachineBeanImpl implements VendingMachineBean {
 
     //refund customer money if machine does not have enough money to give change
     private void refundCustomerMoney(Map<Denomination, Integer> map) {
-        System.out.println(map);
+        for (Map.Entry m : map.entrySet()) {
+            Denomination denomination = Denomination.valueOf(m.getKey().toString());
+            CashDrawer cashDrawer = cashDrawerBeanI.findByDenomination(denomination);
+            cashDrawer.setCount(cashDrawer.getCount() - (Integer) m.getValue());
+            //update the denomination in the VM's cashdrawer
+            cashDrawerBeanI.edit(cashDrawer);
+        }
 
     }
 
-    private Map<Denomination, Integer> giveChange(BigDecimal amount) {
-        Map<Denomination, Integer> m = moneyConverterBeanI.getDenominationsForMoney(amount);
-        return moneyConverterBeanI.getMoneyValueFromDenominations(m).compareTo(amount) == 0 ? m : new HashMap<Denomination, Integer>();
+    //TO DO {make the give change use event model to achieve decoupling}
+    private Map<Denomination, Integer> giveChange(BigDecimal userAmount) {
+        Map<Denomination, Integer> m = moneyConverterBeanI.getDenominationsForMoney(userAmount);
+        return moneyConverterBeanI.getMoneyValueFromDenominations(m).compareTo(userAmount) == 0 ? m : new HashMap<Denomination, Integer>();
 
     }
 
